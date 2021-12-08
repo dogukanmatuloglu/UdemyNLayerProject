@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Text;
 using UdemyNlayerProject.Core.Models;
 using UdemyNlayerProject.Data.Configurations;
+using UdemyNlayerProject.Data.Seeds;
 
 namespace UdemyNlayerProject.Data
 {
     internal class AppDbContext:DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options):base (options)
+        public AppDbContext(DbContextOptions<AppDbContext> options):base (options)//startupcs dosyasında bu optionsları belirteceğiz.
         {
 
         }
@@ -22,6 +23,8 @@ namespace UdemyNlayerProject.Data
 
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductSeed(new int[] { 1, 2 }));
+            modelBuilder.ApplyConfiguration(new CategorySeed(new int[] { 1, 2 }));
         }
 
     }
