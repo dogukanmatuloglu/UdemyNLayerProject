@@ -9,17 +9,16 @@ using UdemyNlayerProject.Core.Repositories;
 
 namespace UdemyNlayerProject.Data.Repository
 {
-    public class ProductRepository : Repository<Product>, IProductRepository
+    public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
         private AppDbContext _appDbContext { get => _context as AppDbContext; }
-        
-        public ProductRepository(DbContext context) : base(context)
+        public CategoryRepository(DbContext context) : base(context)
         {
         }
 
-        public async Task<Product> GetWithCategoryById(int productId)
+        public async Task<Category> GetWitchProductsByIdAsync(int categoryId)
         {
-       return await _appDbContext.Products.Include(x => x.Category).SingleOrDefaultAsync(x => x.Id == productId);
+          return await  _appDbContext.Categories.Include(x => x.Products).SingleOrDefaultAsync(x => x.Id == categoryId);
         }
     }
 }
