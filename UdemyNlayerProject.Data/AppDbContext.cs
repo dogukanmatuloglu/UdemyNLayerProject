@@ -8,7 +8,7 @@ using UdemyNlayerProject.Data.Seeds;
 
 namespace UdemyNlayerProject.Data
 {
-    internal class AppDbContext:DbContext
+    public class AppDbContext:DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options):base (options)//startupcs dosyasında bu optionsları belirteceğiz.
         {

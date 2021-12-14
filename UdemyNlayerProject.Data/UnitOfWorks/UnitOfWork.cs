@@ -9,7 +9,7 @@ using UdemyNlayerProject.Data.Repository;
 
 namespace UdemyNlayerProject.Data.UnitOfWorks
 {
-    internal class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext _context;
         private ProductRepository _productRepository;
