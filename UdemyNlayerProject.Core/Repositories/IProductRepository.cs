@@ -8,6 +8,6 @@ namespace UdemyNlayerProject.Core.Repositories
 {
     public interface IProductRepository:IRepository<Product>
     {
-        Task<Product> GetWithCategoryById(int productId);
+        Task<Product> GetWithCategoryByIdAsync(int productId);
     }
 }

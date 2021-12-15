@@ -8,6 +8,6 @@ namespace UdemyNlayerProject.Core.Service
 {
     public interface IProductService:IService<Product>
     {
-        Task<Product> GetWithCategoryById(int productId);
+        Task<Product> GetWithCategoryByIdAsync(int productId);
     }
 }

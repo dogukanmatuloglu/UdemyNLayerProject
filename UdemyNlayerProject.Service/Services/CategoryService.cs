@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using UdemyNlayerProject.Core.Models;
@@ -11,16 +10,15 @@ using UdemyNlayerProject.Core.UnitOfWork;
 
 namespace UdemyNlayerProject.Service.Services
 {
-    public class ProductService : Service<Product>, IProductService
+    public class CategoryService : Service<Category>, ICategoryService
     {
-        public ProductService(IUnitOfWork unitOfWork,IRepository<Product> repository):base(unitOfWork,repository)
+        public CategoryService(IUnitOfWork unitOfWork, IRepository<Category> repository):base(unitOfWork,repository)
         {
-
+            
         }
-        
-        public async Task<Product> GetWithCategoryByIdAsync(int productId)
+        public async Task<Category> GetWitchProductsByIdAsync(int categoryId)
         {
-            return await _unitOfWork.Products.GetWithCategoryByIdAsync(productId);
+            return await _unitOfWork.Categories.GetWitchProductsByIdAsync(categoryId);
         }
     }
 }

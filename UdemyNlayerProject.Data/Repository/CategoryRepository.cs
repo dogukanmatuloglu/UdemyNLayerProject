@@ -12,7 +12,7 @@ namespace UdemyNlayerProject.Data.Repository
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
         private AppDbContext _appDbContext { get => _context as AppDbContext; }
-        public CategoryRepository(DbContext context) : base(context)
+        public CategoryRepository(AppDbContext context) : base(context)
         {
         }
 
