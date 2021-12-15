@@ -29,9 +29,9 @@ namespace UdemyNlayerProject.Data.Repository
             await _dbSet.AddRangeAsync(entities);
         }
 
-        public IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> predicate)
+        public async Task<IEnumerable<TEntity>> Where(Expression<Func<TEntity, bool>> predicate)
         {
-            return _dbSet.Where(predicate);
+            return await _dbSet.Where(predicate).ToListAsync();
         }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()
