@@ -18,6 +18,7 @@ using UdemyNlayerProject.Data;
 using UdemyNlayerProject.Data.Repository;
 using UdemyNlayerProject.Data.UnitOfWorks;
 using UdemyNlayerProject.Service.Services;
+using AutoMapper;
 
 namespace UdemyNLayerProject.API
 {
@@ -41,6 +42,8 @@ namespace UdemyNLayerProject.API
             services.AddScoped(typeof(IService<>), typeof(Service<>));
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddAutoMapper(typeof(Startup)); 
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
