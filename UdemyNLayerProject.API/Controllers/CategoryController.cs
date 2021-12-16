@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UdemyNlayerProject.Core.Models;
 using UdemyNlayerProject.Core.Service;
 using UdemyNLayerProject.API.DTOs;
 
@@ -33,6 +34,12 @@ namespace UdemyNLayerProject.API.Controllers
         {
             var category = await _categoryService.GetByIdAsync(id);
             return Ok(_mapper.Map<CategoryDto>(category));
+        }
+        [HttpPost]
+        public async Task<IActionResult> Save(CategoryDto categoryDto)
+        {
+            await _categoryService.AddAsync(_mapper.Map<Category>(categoryDto));
+            return Created(string.Empty, _mapper.Map<CategoryDto>(categoryDto));
         }
     }
 }
