@@ -15,7 +15,7 @@ namespace UdemyNlayerProject.Data.Repository
         public CategoryRepository(AppDbContext context) : base(context)
         {
         }
-
+        
         public async Task<Category> GetWitchProductsByIdAsync(int categoryId)
         {
           return await  _appDbContext.Categories.Include(x => x.Products).SingleOrDefaultAsync(x => x.Id == categoryId);
