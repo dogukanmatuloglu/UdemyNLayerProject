@@ -48,5 +48,12 @@ namespace UdemyNLayerProject.API.Controllers
             var category = _categoryService.Update(_mapper.Map<Category>(categoryDto));
             return NoContent(); 
         }
+        [HttpDelete("{id}")]
+        public IActionResult Remove(int id)
+        {
+            var category = _categoryService.GetByIdAsync(id).Result;
+            _categoryService.Remove(category);
+            return NoContent();
+        }
     }
 }
