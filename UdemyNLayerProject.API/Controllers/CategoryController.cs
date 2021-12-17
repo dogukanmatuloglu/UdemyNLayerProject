@@ -41,5 +41,12 @@ namespace UdemyNLayerProject.API.Controllers
             await _categoryService.AddAsync(_mapper.Map<Category>(categoryDto));
             return Created(string.Empty, _mapper.Map<CategoryDto>(categoryDto));
         }
+        [HttpPut]
+        public async Task<IActionResult> Update(CategoryDto categoryDto)
+        {
+
+            var category = _categoryService.Update(_mapper.Map<Category>(categoryDto));
+            return NoContent(); 
+        }
     }
 }
