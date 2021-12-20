@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using UdemyNlayerProject.Core.Models;
 using UdemyNlayerProject.Core.Service;
 using UdemyNLayerProject.API.DTOs;
+using UdemyNLayerProject.API.Filters;
 
 namespace UdemyNLayerProject.API.Controllers
 {
@@ -45,6 +46,7 @@ namespace UdemyNLayerProject.API.Controllers
 
 
         }
+        [ValidationFilter]
         [HttpPost]
         public async Task<IActionResult> Save(ProductDto productDto)
         {

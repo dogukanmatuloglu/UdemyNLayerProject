@@ -42,7 +42,8 @@ namespace UdemyNLayerProject.API
             services.AddScoped(typeof(IService<>), typeof(Service<>));
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
-            services.AddAutoMapper(typeof(Startup)); 
+            services.AddAutoMapper(typeof(Startup));
+            services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
          
         }
 
