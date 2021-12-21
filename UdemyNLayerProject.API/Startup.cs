@@ -20,6 +20,10 @@ using UdemyNlayerProject.Data.UnitOfWorks;
 using UdemyNlayerProject.Service.Services;
 using AutoMapper;
 using UdemyNLayerProject.API.Filters;
+using Microsoft.AspNetCore.Diagnostics;
+using UdemyNLayerProject.API.DTOs;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace UdemyNLayerProject.API
 {
@@ -56,7 +60,31 @@ namespace UdemyNLayerProject.API
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseExceptionHandler(config =>
+            {
+                config.Run(async context =>
+              {
+                  context.Response.StatusCode = 500;
+                  context.Response.ContentType = "application/json";
+                  var error = context.Features.Get<IExceptionHandlerFeature>();
+                  if (error!=null)
+                  {
+                      var ex = error.Error;
+                      ErrorDto errorDto = new ErrorDto();
+                      errorDto.Status = 500;
+                      errorDto.Errors.Add(ex.Message);
+                      await context.Response.WriteAsync(JsonConvert.SerializeObject(errorDto));
 
+                  }
+              });
+
+
+
+
+
+
+
+             });
             app.UseHttpsRedirection();
 
             app.UseRouting();
