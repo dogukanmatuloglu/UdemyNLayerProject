@@ -30,6 +30,7 @@ namespace UdemyNLayerProject.API.Controllers
             return Ok(_mapper.Map<IEnumerable<ProductDto>>(products));
         }
         [HttpGet("{id}")]
+        [ServiceFilter(typeof(NotFoundFilter))]
         public async Task<IActionResult> GetById(int id)
         {
             var product = await _productService.GetByIdAsync(id);
@@ -37,6 +38,7 @@ namespace UdemyNLayerProject.API.Controllers
         }
 
         [HttpGet("{id}/category")]
+        [ServiceFilter(typeof(NotFoundFilter))]
         public async Task<IActionResult>  GetWithCategoryById(int id)
         {
 
@@ -63,6 +65,7 @@ namespace UdemyNLayerProject.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ServiceFilter(typeof(NotFoundFilter))]
         public  IActionResult Remove(int id)
         {
             var product = _productService.GetByIdAsync(id).Result;

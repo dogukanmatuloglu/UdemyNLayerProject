@@ -19,6 +19,7 @@ using UdemyNlayerProject.Data.Repository;
 using UdemyNlayerProject.Data.UnitOfWorks;
 using UdemyNlayerProject.Service.Services;
 using AutoMapper;
+using UdemyNLayerProject.API.Filters;
 
 namespace UdemyNLayerProject.API
 {
@@ -34,6 +35,7 @@ namespace UdemyNLayerProject.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<NotFoundFilter>();
             services.AddDbContext<AppDbContext>(options => 
             { options.UseSqlServer(Configuration["ConnectionStrings:SqlConStr"].ToString(),o=> { o.MigrationsAssembly("UdemyNlayerProject.Data"); }); });
             services.AddControllers();
