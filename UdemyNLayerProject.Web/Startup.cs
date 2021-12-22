@@ -16,6 +16,7 @@ using UdemyNlayerProject.Data;
 using UdemyNlayerProject.Data.Repository;
 using UdemyNlayerProject.Data.UnitOfWorks;
 using UdemyNlayerProject.Service.Services;
+using AutoMapper;
 
 namespace UdemyNLayerProject.Web
 {
@@ -32,6 +33,7 @@ namespace UdemyNLayerProject.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IService<>), typeof(Service<>));
