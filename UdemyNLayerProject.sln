@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNLayerProject.API", "UdemyNLayerProject.API\UdemyNLayerProject.API.csproj", "{F74296E7-8765-4055-895B-DAF8C5A47DBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyNLayerProject.API", "UdemyNLayerProject.API\UdemyNLayerProject.API.csproj", "{F74296E7-8765-4055-895B-DAF8C5A47DBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNlayerProject.Core", "UdemyNlayerProject.Core\UdemyNlayerProject.Core.csproj", "{D21B4F49-59E0-4431-98B6-50BC0372D856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyNlayerProject.Core", "UdemyNlayerProject.Core\UdemyNlayerProject.Core.csproj", "{D21B4F49-59E0-4431-98B6-50BC0372D856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNlayerProject.Data", "UdemyNlayerProject.Data\UdemyNlayerProject.Data.csproj", "{2E14F044-AAFC-4C33-9782-058821DC2D83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyNlayerProject.Data", "UdemyNlayerProject.Data\UdemyNlayerProject.Data.csproj", "{2E14F044-AAFC-4C33-9782-058821DC2D83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNlayerProject.Service", "UdemyNlayerProject.Service\UdemyNlayerProject.Service.csproj", "{ADBAC9B3-C1C1-4AA9-A66C-05B222AA0B3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyNlayerProject.Service", "UdemyNlayerProject.Service\UdemyNlayerProject.Service.csproj", "{ADBAC9B3-C1C1-4AA9-A66C-05B222AA0B3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNLayerProject.Web", "UdemyNLayerProject.Web\UdemyNLayerProject.Web.csproj", "{B4B061DB-7EA7-4B99-924D-92E1F2BFB40E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{ADBAC9B3-C1C1-4AA9-A66C-05B222AA0B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADBAC9B3-C1C1-4AA9-A66C-05B222AA0B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADBAC9B3-C1C1-4AA9-A66C-05B222AA0B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B061DB-7EA7-4B99-924D-92E1F2BFB40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B061DB-7EA7-4B99-924D-92E1F2BFB40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B061DB-7EA7-4B99-924D-92E1F2BFB40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B061DB-7EA7-4B99-924D-92E1F2BFB40E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
