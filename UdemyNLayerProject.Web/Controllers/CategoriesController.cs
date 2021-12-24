@@ -23,6 +23,7 @@ namespace UdemyNLayerProject.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var categories = await _categoryService.GetAllAsync();
+
             return View(_mapper.Map<IEnumerable<CategoryDto>>(categories));
         }
 
@@ -32,10 +33,11 @@ namespace UdemyNLayerProject.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IAsyncResult> Create(CategoryDto categoryDto)
+        public async Task<IActionResult> Create(CategoryDto categoryDto)
         {
             await _categoryService.AddAsync(_mapper.Map<Category>(categoryDto));
-            return RedirectToAction("Index","Categories");
+
+            return RedirectToAction("Index");
         }
     }
 }
