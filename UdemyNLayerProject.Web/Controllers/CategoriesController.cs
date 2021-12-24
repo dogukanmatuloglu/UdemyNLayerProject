@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UdemyNlayerProject.Core.Models;
 using UdemyNlayerProject.Core.Service;
 using UdemyNLayerProject.Web.DTOs;
 
@@ -23,6 +24,18 @@ namespace UdemyNLayerProject.Web.Controllers
         {
             var categories = await _categoryService.GetAllAsync();
             return View(_mapper.Map<IEnumerable<CategoryDto>>(categories));
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IAsyncResult> Create(CategoryDto categoryDto)
+        {
+            await _categoryService.AddAsync(_mapper.Map<Category>(categoryDto));
+            return RedirectToAction("Index","Categories");
         }
     }
 }
