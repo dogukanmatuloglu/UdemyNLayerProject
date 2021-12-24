@@ -17,6 +17,7 @@ using UdemyNlayerProject.Data.Repository;
 using UdemyNlayerProject.Data.UnitOfWorks;
 using UdemyNlayerProject.Service.Services;
 using AutoMapper;
+using UdemyNLayerProject.Web.Filters;
 
 namespace UdemyNLayerProject.Web
 {
@@ -32,6 +33,7 @@ namespace UdemyNLayerProject.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<NotFoundFilter>();
             services.AddControllersWithViews();
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
