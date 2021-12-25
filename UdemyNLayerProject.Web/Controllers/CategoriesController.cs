@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UdemyNlayerProject.Core.Models;
 using UdemyNlayerProject.Core.Service;
+using UdemyNLayerProject.Web.ApiService;
 using UdemyNLayerProject.Web.DTOs;
 using UdemyNLayerProject.Web.Filters;
 
@@ -15,15 +16,17 @@ namespace UdemyNLayerProject.Web.Controllers
     {
 
         private readonly ICategoryService _categoryService;
+        private readonly CategoryApiService _categoryApiService;
         private readonly IMapper _mapper;
-        public CategoriesController(ICategoryService categoryService,IMapper mapper)
+        public CategoriesController(ICategoryService categoryService,IMapper mapper,CategoryApiService categoryApiService)
         {
             _categoryService = categoryService;
             _mapper = mapper;
+            _categoryApiService = categoryApiService;
         }
         public async Task<IActionResult> Index()
         {
-            var categories = await _categoryService.GetAllAsync();
+            var categories = await _categoryApiService.GetAllAsync();
 
             return View(_mapper.Map<IEnumerable<CategoryDto>>(categories));
         }
