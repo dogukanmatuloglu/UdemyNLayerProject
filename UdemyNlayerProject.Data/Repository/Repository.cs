@@ -51,7 +51,7 @@ namespace UdemyNlayerProject.Data.Repository
 
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
-            _dbSet.RemoveRange(entities);
+            _dbSet.RemoveRange(entities); ;
         }
 
         public async Task<TEntity> SingleOrDefault(Expression<Func<TEntity, bool>> predicate)
